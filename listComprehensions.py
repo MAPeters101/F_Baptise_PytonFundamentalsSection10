@@ -59,3 +59,51 @@ high_sales = [key for key, value in sales.items() if value >= 5]
 print(high_sales)
 
 print('='*30)
+
+m = [[0] * 3] * 3
+print(m)
+print(m[0] is m[1])
+m[0][0] = 100
+print(m)
+
+m = [[0, 0, 0] for row in range(3)]
+print(m)
+print(m[0] is m[1])
+m[0][0] = 100
+print(m)
+
+m = [[0, 0, 0] for _ in range(3)]
+print(m)
+print(m[0] is m[1])
+m[0][0] = 100
+print(m)
+
+m = [[0]*3 for _ in range(3)]
+print(m)
+print(m[0] is m[1])
+m[0][0] = 100
+print(m)
+
+m = [[0]*3 for _ in range(3)]
+for row in range(3):
+    for col in range(3):
+        if row == col:
+            m[row][col] = 1
+print(m)
+
+m = [[1 if row==col else 0 for col in range(3)] for row in range(3)]
+print(m)
+
+m = [
+    [1 if row==col else 0
+     for col in range(3)
+    ]
+    for row in range(3)
+]
+print(m)
+
+
+
+
+
+
