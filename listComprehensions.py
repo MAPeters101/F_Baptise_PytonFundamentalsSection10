@@ -1,0 +1,61 @@
+vectors = [(0,0), (0,1), (1,0), (1,1)]
+from math import sqrt
+magnitudes = []
+for vector in vectors:
+    magnitude = sqrt(vector[0] ** 2 + vector[1] ** 2)
+    magnitudes.append(magnitude)
+
+print(magnitudes)
+
+magnitudes = [sqrt(vector[0] ** 2 + vector[1] ** 2) for vector in vectors]
+print(magnitudes)
+
+from time import perf_counter
+start = perf_counter()
+for i in range(100_000):
+    magnitudes = []
+    for vector in vectors:
+        magnitude = sqrt(vector[0] ** 2 + vector[1] ** 2)
+        magnitudes.append(magnitude)
+end = perf_counter()
+elapsed_time = end - start
+print(elapsed_time)
+
+from time import perf_counter
+start = perf_counter()
+for i in range(100_000):
+    magnitudes = [sqrt(vector[0] ** 2 + vector[1] ** 2) for vector in vectors]
+end = perf_counter()
+elapsed_time = end - start
+print(elapsed_time)
+
+
+strings = "Python is an awesome language".split(' ')
+print(strings)
+
+filtered = []
+for item in strings:
+    if len(item) >= 5:
+        filtered.append(item)
+print(filtered)
+
+filtered = [item for item in strings if len(item) >= 5]
+print(filtered)
+
+sales = {
+    'widget 1': 0,
+    'widget 2': 5,
+    'widget 3': 10,
+    'widget 4': 2,
+}
+
+high_sales = []
+for key, value in sales.items():
+    if value >= 5:
+        high_sales.append(key)
+print(high_sales)
+
+high_sales = [key for key, value in sales.items() if value >= 5]
+print(high_sales)
+
+print('='*30)
