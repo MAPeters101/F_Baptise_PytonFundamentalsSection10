@@ -67,6 +67,12 @@ for element in set(data):
 print(freq)
 print()
 
+freq = {
+    element: len([char for char in data if char == element])
+    for element in set(data)
+}
+print(freq)
+print()
 
 
 
