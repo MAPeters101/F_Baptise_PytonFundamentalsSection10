@@ -72,9 +72,52 @@ freq = {
     for element in set(data)
 }
 print(freq)
+print('+'*80)
+
+
+from collections import Counter
+data = ['a', 'a', 'a', 'b', 'b', 'c', 'c', 'c', 'd']
+freq = Counter(data)
+print(freq)
+
+freq = dict(freq)
+print(freq)
 print()
 
 
+paragraph = """
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum."""
+
+freq = Counter(paragraph)
+print(dict(freq))
+print()
+
+ignored = ' ,.\n'
+freq = Counter(paragraph.casefold())
+print(dict(freq))
+print()
+
+freq = {key: value for key, value in freq.items() if key not in ignored}
+print(freq)
+
+freq = {
+    key: value
+    for key, value in dict(Counter(paragraph.casefold())).items()
+    if key not in ignored
+}
+print(freq)
+
+freq = {
+    key: value
+    for key, value in Counter(paragraph.casefold()).items()
+    if key not in ignored
+}
+print(freq)
 
 
 
