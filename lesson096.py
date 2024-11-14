@@ -29,6 +29,46 @@ print(sales_by_widget)
 
 sales_by_widget = {d['name']:d['sales'] for d in widget_sales if d['sales'] > 0}
 print(sales_by_widget)
+print('='*80)
+
+
+paragraph = """
+To be, or not to be--that is the question:
+Whether 'tis nobler in the mind to suffer
+The slings and arrows of outrageous fortune
+Or to take arms against a sea of troubles
+And by opposing end them. To die, to sleep--
+No more--and by a sleep to say we end
+The heartache, and the thousand natural shocks
+That flesh is heir to.
+"""
+
+punctuation = ',.!-\n'
+for char in punctuation:
+    paragraph = paragraph.replace(char, ' ')
+
+print(paragraph)
+all_words = paragraph.split()
+print(all_words)
+
+words = {word.lower() for word in all_words if len(word) > 4}
+print(words)
+print('='*50)
+
+
+
+data = ['a', 'a', 'a', 'b', 'b', 'c', 'c', 'c', 'd']
+
+freq = {}
+for element in set(data):
+    count = len([char for char in data if char == element])
+    freq[element] = count
+
+print(freq)
+print()
+
+
+
 
 
 
